@@ -1,0 +1,41 @@
+### Omer Boucris ###
+## ID: 314969817 ##
+
+version: "3.8"
+services:
+  database:
+    image: mongo
+    ports:
+      - "27017:27017"
+    restart: on-failure
+    container_name: MongoDB
+    networks:
+      - app-network
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    depends_on:
+      - database
+    container_name: WeatherTrack-backend
+    networks:
+      - app-network
+      
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    container_name: WeatherTrack-frontend
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+

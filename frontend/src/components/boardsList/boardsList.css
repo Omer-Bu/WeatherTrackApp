@@ -1,0 +1,23 @@
+.boardListText{
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.backButton{
+  width: 200px;
+  height: 30px;
+  border: none;
+  background: #2e759d;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px 5px;
+  cursor: pointer;
+  font-size: 20px;
+  outline: none;
+  font-size: 16px;
+  margin-left: 5rem;
+  margin-left: 25rem;
+}
+
